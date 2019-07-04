@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Format Requirements</title>
+</head>
+<body>
+    <div>
+        <h2>Format Requirements( version 1.0 )</h2>
+        <br>
+        <h5>Upload File Format:</h5>
+        <p>Accepted file formats: csv, xlsx and xls.</p>
+        <br>
+        <h5>Content Format</h5>
+        <p>Your table should contains:</p>
+        <ol>
+            <li>DateTime in ISO (see below)</li>
+            <li>Relative Humidity in %</li>
+            <li>Temperature in F</li>
+        </ol>
+        <p> DateTime is ISO time format (<strong>YYYY-MM-DDThh:mm:ss</strong>), for example: 0 hour time on 2019-06-01 would be expressed as <span><strong> 2019-06-01T00:00:00</strong></span></p>
+        
+        <table style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th  style="border: 1px solid black">Dates</th>
+                    <th  style="border: 1px solid black">TU</th>
+                    <th  style="border: 1px solid black">OB</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid black">2019-06-01T00:00:00</td>
+                    <td style="border: 1px solid black">90</td>
+                    <td style="border: 1px solid black">54</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <button style="margin-top: 2rem" id="goback">Go back</button>
+    </div>
+
+    <script>
+        let goback = document.querySelector("#goback");
+        goback.addEventListener('click', function(e){
+            window.history.back();
+        })
+    </script>
+</body>
+</html>

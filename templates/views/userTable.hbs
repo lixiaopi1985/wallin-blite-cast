@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/mycss.css">
+    <link rel="stylesheet" href="/css/all.css">
+    <script src="/scripts/all.js"></script>
+    {{>loadboostrap}}
+    <title>Report</title>
+</head>
+<body>
+    <div>
+        {{>nav}}
+    </div>
+
+    <div class="loader">
+        <div class="lds-default">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+        </div>
+        <div class="loader-text">
+            loading
+        </div>
+    </div>
+
+    <h2>Report:</h2>
+    <div id="report">
+        <p></p>
+    </div>
+
+
+    <div id="downloadDiv" style="margin-bottom: 2rem; margin-left: 2rem;">
+        <a href="{{ downloadLink }}"><i class="fas fa-download"></i> Download report</a>
+    </div>
+
+
+    <div id="tableDiv">
+
+        <div class="legend">
+            <div class="legend-title" style="float: left; margin-right: 5px;">
+                <h6>Accumulated Severity Scale: </h6>
+            </div>
+
+            <div class="legend-scale">
+                <ul class="legend-labels">
+                    <li id="0"><span style="background: #3498db" id="0"> &lt 5 </span>Very Low</li>
+                    <li id="1"><span style="background: #2ecc71" id="1"> 5-10 </span>Low</li>
+                    <li id="2"><span style="background: #f39c12" id="2"> 11-15 </span>Medium</li>
+                    <li id="3"><span style="background: #e74c3c" id="3"> 16-20 </span>High</li>
+                    <li id="4"><span style="background: #c0392b" id="4"> &gt 20 </span>Very High</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <table id="dsvTable">
+            <thead>
+                <tr>
+                    <th>Dates</th>
+                    <th>Daily DSV</th>
+                    <th>Accumulative DSV</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each rowTable }}
+                <tr>
+                    <td>{{ this.Dates }}</td>
+                    <td>{{ this.dailyDSV }}</td>
+                    <td class="accumCell">{{ this.accumDSV }}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/scripts/tableColor.js"></script>
+</body>
+</html>

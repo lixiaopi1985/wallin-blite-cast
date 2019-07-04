@@ -1,0 +1,38 @@
+<div class="rightMap">
+    <div id="map"></div>
+    <div class='slider' id="sliderDiv">
+        <div class='slider-inner'>
+            <div class="header">
+                <div class="title"><h4>Forecast 7 days</h4></div>
+                <form class="modeForm">
+                    <div class="selectMode">
+                        <label for="mode1"><input type="radio" name="mode" id="mode1" value="0" checked> Regional Overview</label>
+                        <label for="mode2"><input type="radio" name="mode" id="mode2" value="1"> Stations</label>
+                    </div>
+                </from>
+            </div>
+
+            {{!-- range slider --}}
+            <label id='Date'></label>
+            <input id='sliderInput' type='range' value = "0" list="tickmarks">
+            <datalist id="tickmarks">
+            </datalist>
+        </div>
+        <div class="legend">
+            <div class="legend-title">
+                <h6>Accumulated Severity Scale</h6>
+            </div>
+            <div class="legend-scale">
+                <ul class="legend-labels">
+                    <li id="0"><span style="background: #3498db" id="0"> &lt 5 </span>Very Low</li>
+                    <li id="1"><span style="background: #2ecc71" id="1"> 5-10 </span>Low</li>
+                    <li id="2"><span style="background: #f39c12" id="2"> 11-15 </span>Medium</li>
+                    <li id="3"><span style="background: #e74c3c" id="3"> 16-20 </span>High</li>
+                    <li id="4"><span style="background: #c0392b" id="4"> &gt 20 </span>Very High</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,105 @@
+<div class="left">
+
+    <div style="margin: 2rem 2rem;">
+        {{!-- action decides where to submit the form --}}
+
+        <div id="dateValid">
+            <p id="validMsg"></p>
+        </div>
+        <h6 style="margin-top:2rem;"><i class="fas fa-binoculars" style="color:green"></i>  Forecast with:</h6>
+
+        <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" name="rad" id="radiobutton1" value="inter">
+            <label for="radiobutton1" class="custom-control-label">Use Station Data</label>
+        </div>
+        
+
+        <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" name="rad" id="radiobutton2" value="manul">
+            <label for="radiobutton2" class="custom-control-label">Upload Your Data</label>
+
+            <div class="popup">
+                <span id="infoMarker">
+                    <i class="fas fa-info-circle" id="infoMarker"></i>
+                </span>
+                <span class="popuptext">click for format requirements</span>
+            </div>
+        </div>
+
+        <form action="/form1" method="post" id='form1'>
+
+            <div id="collapse1">
+
+                <div class="form-group" id="emergenceDate">
+                    <label for="datepicker"><i class="fas fa-seedling" style="color:green"></i>  Plant Emergence Date</label>
+                    <input class="form-control" id="datepicker_form1" type="date" name="emdate">
+                </div>
+                <div class="form-group" id="endDate">
+                    <label for="datepicker"><i class="fas fa-leaf" style="color:green"></i>  Estimate Harvest Date</label>
+                    <input class="form-control" id="datepicker_hvdate" type="date" name="hvdate">
+                </div>
+                <div class="form-group">
+                    <label for="selectState">Select State</label>
+                    <select id="selectState" class="form-control" form="form1">
+                        <option disabled selected value>-- select a state</option>
+                        <option value="OR">Oregon</option>
+                        <option value="WA">Washington</option>
+                        <option value="ID">Idaho</option>
+                        <option value="0">All Three States</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="form-control bg-light" id="submitButton" type="submit">Submit</button>
+                </div>
+            </div>
+
+        </form>
+
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+
+                <form action="/form2" method="post" enctype="multipart/form-data" id='form2'>
+
+                    <div id="collapse2">
+                        <div id="dateValid2">
+                            <p id="validMsg2"></p>
+                        </div>
+                        <div id="modalClose"><span id="spanClose">&times;</span></div>
+                        <div class="form-group" id="emergenceDate">
+                            <label for="datepicker"><i class="fas fa-seedling" style="color: green"></i>  Plant Emergence Date</label>
+                            <input class="form-control" id="datepicker_form2" type="date" name="emdate">
+                        </div>
+                        <div class="drop_zone">
+                            <input type="file" name="uploadzone" id="drop__select" accept="application/vnd.openxmlformats-officedocumnet.spreadsheetml.sheet, application/vnd.ms-excel, text/csv">
+                            <label id="drop__text" for="drop__select"><strong>Drop</strong> or <strong>Click</strong> to upload</label>
+                            {{!-- <progress></progress> --}}
+                            <p class="warningMsg">{{ error }}</p>
+                        </div>
+                        <div class="form-group">
+                            <button class="form-control bg-light" id="drop__button" type="submit">Upload</button>
+                        </div>    
+                    </div>
+                </form>
+                <div class="form-group">
+                    <button class="form-control bg-light" id="cancel__button">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+    <img id="osulogo" style="width:80%; height:8%; position:absolute; bottom:0; padding: 5px" src="/images/osulogo.png" alt="">
+    
+</div>
+
+{{!-- 
+            <div class="custom-control uploadMenu">
+                <input type="file" id="uploadfile" class="custom-file-input">
+                <label for="uploadfile" class="custom-file-label" id="uploadLabel">.excel</label>
+            </div>
+
+            <div class="form-group mt-2">
+                <button class="form-control bg-light" id="submitButton">Upload</button>
+            </div> --}}

@@ -4,7 +4,7 @@ const chalk = require('chalk');
 
 const PORT = 27017;
 const DBNAME = 'AgrimetWeather';
-const PASSWORD = 'Lxp3961881';
+const PASSWORD = '********';
 const URL = `mongodb+srv://xpingli:${PASSWORD}@officialweather-vral8.mongodb.net/${DBNAME}?retryWrites=true&w=majority` || `mongodb://127.0.0.1:${PORT}/${DBNAME}`;
 
 
